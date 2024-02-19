@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:wght@400;600$display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #fff8f9;
+    display: flex;
+}
+
+/* login & register */
+.wrapper {
+    width: 330px;
+    padding: 2rem 1rem;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2rem;
+    color: #07001f;
+    margin-bottom: 1.2rem;
+}
+
+form input {
+    width: 92%;
+    outline: none;
+    padding: 12px 20px;
+    border: 1px solid #fff;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background: #e4e4e4;
+}
+
+button {
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding: 10px 0;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 90%;
+    background: #f6a6bb;
+    color: #fff;
+    cursor: pointer;
+}
+button:hover {
+    background: #f9bfce;
+}
+
+input:focus {
+    border: 1px solid rgb(192, 192, 192);
+}
+
+.login {
+    font-size: 0.8rem;
+    margin-top: 1.4rem;
+    color: #636363;
+}
+.login a {
+    color: #f6a6bb;
+    text-decoration: none;
+}
+
+.alert.alert-success {
+    /* style untuk pesan sukses */
+    padding: 10px;
+    border: 1px solid #28a745;
+    background-color: #d4edda;
+    color: #28a745;
+    margin-bottom: 10px; /* jarak antara pesan dengan elemen di bawahnya */
+}
+
+.alert.alert-danger {
+    /* style untuk pesan peringatan */
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #f1556c;
+    border-radius: 5px;
+    background-color: #f8d7da;
+    color: #721c24;
+}
+.alert.alert-danger ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.alert.alert-danger li {
+    margin-bottom: 5px;
+}
