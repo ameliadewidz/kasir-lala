@@ -13,6 +13,7 @@
         display: flex;
     }
 
+    /* sidebar */
     .sidebar {
         position: sticky;
         top: 0;
@@ -98,7 +99,7 @@
     }
     
     .header--title {
-        color: #ee87a6;;
+        color: #ee87a6;
     }
 
     /* product data */
@@ -119,7 +120,6 @@
         color: #ee87a6;
         padding-bottom: 10px;
         font-size: 15px;
-
     }
 
     .card--wrapper button {
@@ -146,8 +146,17 @@
         margin-bottom: 10px;
         flex-direction: column;
     }
-
     .form-box form .input input {
+        height: 40px;
+        width: 100%;
+        font-size: 16px;
+        padding: 0 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+    .form-box form .input textarea {
         height: 40px;
         width: 100%;
         font-size: 16px;
@@ -168,4 +177,119 @@
         margin-top: 10px;
         padding: 0px 10px;
         width: 250px;
+    }
+
+    
+    /* table */
+    .table-container {
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead {
+        background: #ffbdc7;
+        color: #fff;
+    }
+
+    th {
+        padding: 15px;
+        text-align: left;
+    }
+
+    tbody {
+        background: #f2f2f2;
+    }
+
+    td {
+        padding: 15px;
+        font-size: 14px;
+        color: #333;
+    }
+
+    tr:nth-child(even) {
+        background: #fff;
+
+    }
+
+    tfoot {
+        background: rgba(113, 99, 186, 255);
+        font-weight: bold;
+        color: #fff;
+    }
+    tfoot td {
+        padding: 15px;
+    }
+
+    .table-container .button {
+        color: #fff;
+        cursor: pointer;
+        background-color: #ffbdc7;
+        border: none;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        border-radius: 4px;
+    }
+
+    .button {
+        color: #fff;
+        cursor: pointer;
+        background-color: #ffaf7a;
+        border: none;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        border-radius: 4px;
+    }
+
+    .button-edit {
+        color: #fff;
+        cursor: pointer;
+        background-color: #6fc276; /* Warna hijau atau warna yang Anda inginkan */
+        border: none;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+        border-radius: 4px;
+        margin-bottom: 5px; /* Jarak antar tombol */
+    }
+    .button-delete {
+        color: #fff;
+        cursor: pointer;
+        background-color: #ff6961; /* Warna merah atau warna yang Anda inginkan */
+        border: none;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+        border-radius: 4px;
+        margin-bottom: 5px; /* Jarak antar tombol */
+    }
+
+    select {
+        height: 40px;
+        width: 100%;
+        font-size: 16px;
+        padding: 0 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+    .alert.alert-success {
+        /* style untuk pesan sukses */
+        padding: 10px;
+        border: 1px solid #28a745;
+        background-color: #d4edda;
+        color: #28a745;
+        margin-bottom: 10px; /* jarak antara pesan dengan elemen di bawahnya */
     }

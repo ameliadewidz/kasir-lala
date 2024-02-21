@@ -15,17 +15,17 @@ class UserSeeder extends Seeder
     {
         $userData = [
             [
-                'name' => 'Lala',
-                'email' => 'lala@gmail.com',
-                'role' => 'petugas',
-                'password' => bcrypt('lala123'),
-            ],
-            [
-                'name' => 'Amel',
-                'email' => 'amel@gmail.com',
+                'name' => 'Admin Lala',
+                'email' => 'lala1@gmail.com',
                 'role' => 'admin',
-                'password' => bcrypt('amel123'),
+                'password' => bcrypt('123'),
             ],
+            // [
+            //     'name' => 'Amel',
+            //     'email' => 'amel@gmail.com',
+            //     'role' => 'admin',
+            //     'password' => bcrypt('amel123'),
+            // ],
         ];
         foreach ($userData as $key => $val) {
             User::create($val);

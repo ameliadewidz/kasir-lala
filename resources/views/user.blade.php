@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>KasiRPL - Customer</title>
+    <title>KasiRPL - User</title>
     <link href="{{ asset('css/customer.css') }}" rel="stylesheet" type="text/css" >
 </head>
 <body>
@@ -69,7 +69,7 @@
             <div class="header--wrapper">
                 <div class="header--title">
                     <span>KasiRPL</span>
-                    <h1>Customer</h1>
+                    <h1>User</h1>
                 </div>
     
                 <div class="admin-name">
@@ -80,39 +80,39 @@
 
             {{-- product --}}
             <div class="card--container">
-                <h3 class="main--title">Customer</h3>
+                <h3 class="main--title">User</h3>
                 <div class="card--wrapper">
-                    <a href="{{ url('addcust') }}" class="button">Add Customer</a>
+                    <a href="{{ url('adduser') }}" class="button">Add User</a>
                     <div class="table-container">
                         <!-- mengecek pesan sukses (jika berhasil) lalu tampilkan -->
-                        @if(Session::has('success'))
-                        <div class="alert alert-success">
-                            {{ Session::get('success') }}
-                        </div>
-                    @endif
+                            @if(Session::has('success'))
+                                <div class="alert alert-success">
+                                    {{ Session::get('success') }}
+                                </div>
+                            @endif
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Customer ID</th>
+                                    <th>ID</th>
                                     <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Phone Number</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($data as $row)
                                 <tr>
-                                    <td>{{ $row->pelangganID }}</td>
-                                    <td>{{ $row->namaPelanggan }}</td>
-                                    <td>{{ $row->alamat }}</td>
-                                    <td>{{ $row->nomorTelp }}</td>
+                                    <td>{{ $row->id }}</td>
+                                    <td>{{ $row->name }}</td>
+                                    <td>{{ $row->email }}</td>
+                                    <td>{{ $row->role }}</td>
                                     <td>
                                         <div class="button-container">
                                             
                                         </div>
-                                        <a href="/viewcust/{{ $row->pelangganID }}" class="button-edit">Edit</a>
-                                        <a href="/deletecust/{{ $row->pelangganID }}" class="button-delete">Delete</a>
+                                        <a href="/viewuser/{{ $row->id }}" class="button-edit">Edit</a>
+                                        <a href="/deleteuser/{{ $row->id }}" class="button-delete">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach

@@ -165,6 +165,17 @@
         border: 1px solid #ccc;
         outline: none;
     }
+    .field.input select {
+        height: 40px;
+        width: 100%;
+        font-size: 16px;
+        padding: 0 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        outline: none;
+        background: #e4e4e4; /* Warna latar belakang */
+        color: #333; /* Warna teks */
+    }
 
     .field button {
         height: 35px;
@@ -178,6 +189,8 @@
         padding: 0px 10px;
         width: 250px;
     }
+
+    
 
     .table-container {
         width: 100%;
@@ -222,7 +235,7 @@
         padding: 15px;
     }
 
-    .table-container button {
+    .table-container .button {
         color: #fff;
         cursor: pointer;
         background-color: #ffbdc7;
@@ -233,4 +246,53 @@
         display: inline-block;
         font-size: 14px;
         border-radius: 4px;
+    }
+
+    .button {
+        color: #fff;
+        cursor: pointer;
+        background-color: #ffaf7a;
+        border: none;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        border-radius: 4px;
+    }
+    
+    .button-edit {
+        /* display: block; Menampilkan tombol Edit satu di atas yang lain */
+        color: #fff;
+        cursor: pointer;
+        background-color: #6fc276; /* Warna hijau atau warna yang Anda inginkan */
+        border: none;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+        border-radius: 4px;
+        margin-bottom: 5px; /* Jarak antar tombol */
+    }
+    .button-delete {
+        /* display: block; Menampilkan tombol Delete satu di atas yang lain */
+        color: #fff;
+        cursor: pointer;
+        background-color: #ff6961; /* Warna merah atau warna yang Anda inginkan */
+        border: none;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+        border-radius: 4px;
+        margin-bottom: 5px; /* Jarak antar tombol */
+    }
+
+    .alert.alert-success {
+        /* style untuk pesan sukses */
+        padding: 10px;
+        border: 1px solid #28a745;
+        background-color: #d4edda;
+        color: #28a745;
+        margin-bottom: 10px; /* jarak antara pesan dengan elemen di bawahnya */
     }

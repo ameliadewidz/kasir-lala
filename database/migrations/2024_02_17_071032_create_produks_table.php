@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('produks', function (Blueprint $table) {
-            $table->bigInteger('produkID')->primary();
-            $table->string('namaProduk');
-            $table->integer('harga');
-            $table->integer('stok');
-            $table->timestamps();
-            //$table->primary('produkID'); // Pastikan ini sesuai dengan tipe data yang diacu
-
-        });
+        // Schema::create('produks', function (Blueprint $table) {
+        //     $table->bigInteger('produkID')->primary();
+        //     $table->string('namaProduk');
+        //     $table->integer('harga');
+        //     $table->integer('stok');
+        //     $table->timestamps();
+        //     //$table->primary('produkID'); // Pastikan ini sesuai dengan tipe data yang diacu
+        //     $table->index('produkID');
+        // });
     }
 
     /**

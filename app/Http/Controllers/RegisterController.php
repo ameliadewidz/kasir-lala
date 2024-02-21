@@ -17,19 +17,20 @@ class RegisterController extends Controller
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
+            'role' => 'required|in:pelanggan,petugas',
         ]);
 
         User::create([
             'name' => $req->input('name'),
             'email' => $req->input('email'),
             'password' => bcrypt($req->input('password')),
-            'role' => 'petugas',
+            'role' => $req->input('role'),
         ]);
 
         // set flash message
         Session::flash('success', 'Registered Successfully!');
 
-         // kalau berhasil arahkan ke halaman login
+        // kalau berhasil arahkan ke halaman login
         return redirect()->route('login');
     }
 }

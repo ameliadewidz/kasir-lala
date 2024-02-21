@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>KasiRPL - Transaction</title>
+    <title>KasiRPL - Edit User</title>
     <link href="{{ asset('css/addData.css') }}" rel="stylesheet" type="text/css" >
 </head>
 <body>
@@ -29,7 +29,7 @@
                     </a>
                 </li>
                 @endif
-
+                
                 @if(Auth::user()->role == 'petugas')
                 <li>
                     <a href="{{ url('dashboard/petugas') }}">
@@ -68,7 +68,7 @@
             <div class="header--wrapper">
                 <div class="header--title">
                     <span>KasiRPL</span>
-                    <h1>Transaction</h1>
+                    <h1>Update User</h1>
                 </div>
     
                 <div class="admin-name">
@@ -79,43 +79,36 @@
     
             {{-- customer --}}
             <div class="card--container">
-                <h3 class="main--title">Transaction</h3>
+                <h3 class="main--title">Product</h3>
                 <div class="card--wrapper">
                     <div class="container">
                         <div class="box form-box">
-                            <form action="{{ route('inserttransaction') }}" method="POST" enctype="multipart/form-data">
+                            <form action="/updateuser/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                {{-- <div class="field input">
-                                    <label for="id">ID</label>
-                                    <input type="text" name="id" id="id" value="{{ old('id') }}">
-                                </div> --}}
-                            
                                 <div class="field input">
-                                    <label for="penjualanID">Transaction ID</label>
-                                    <input type="text" name="penjualanID" id="penjualanID" value="{{ old('penjualanID') }}">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" id="name" value="{{ $data->name }}">
                                 </div>
                             
                                 <div class="field input">
-                                    <label for="date">Date</label>
-                                    <input type="date" name="date" id="date" value="{{ old('date') }}">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" value="{{ $data->email }}">
                                 </div>
                             
                                 <div class="field input">
-                                    <label for="totalHarga">Total Price</label>
-                                    <input type="text" name="totalHarga" id="totalHarga" value="{{ old('totalHarga') }}">
+                                    <label for="id">Password</label>
+                                    <input type="password" name="password" id="password" value="{{ $data->password }}">
                                 </div>
-                            
-                                <div class="field input">
-                                    <label for="id">Customer ID</label>
-                                    <select name="pelangganID" id="pelangganID">
-                                        @foreach($data as $row)
-                                            <option value="{{ $row->pelangganID }}">{{ $row->namaProduk }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+
+                                <label for="role">Role</label>
+                                <select name="role" id="role" value="{{ $data->role }}" class="field-input">
+                                    <option value="pelanggan">Pelanggan</option>
+                                    <option value="petugas">Petugas</option>
+                                    <option value="admin">Admin</option>
+                                </select>
                                 
                                 <div class="field">
-                                    <button>Add Data</button>
+                                        <button>Update Data</button>
                                 </div>
                             </form>
                         </div>

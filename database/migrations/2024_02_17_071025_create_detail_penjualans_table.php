@@ -11,6 +11,15 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::create('produks', function (Blueprint $table) {
+            $table->bigInteger('produkID')->primary();
+            $table->string('namaProduk');
+            $table->integer('harga')->default(0);
+            $table->integer('stok');
+            $table->timestamps();
+            $table->index('produkID');
+        });
+        
         Schema::create('detail_penjualans', function (Blueprint $table) {
             $table->bigIncrements('detailID');
             $table->bigInteger('penjualanID'); // Gunakan unsigned
@@ -19,10 +28,8 @@ return new class extends Migration
             $table->integer('subTotal');
             $table->timestamps();
 
-           $table->foreign('penjualanID')->references('penjualanID')->on('penjualans');
-           $table->foreign('produkID')->references('produkID')->on('produk2s');
-           
-
+            $table->foreign('penjualanID')->references('penjualanID')->on('penjualans');
+            $table->foreign('produkID')->references('produkID')->on('produks');
         });
     }
 

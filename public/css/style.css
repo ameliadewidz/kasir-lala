@@ -39,6 +39,17 @@ form input {
     background: #e4e4e4;
 }
 
+form select {
+    width: 92%;
+    outline: none;
+    padding: 12px 20px;
+    border: 1px solid #fff;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background: #e4e4e4;
+    appearance: none;
+}
+
 button {
     font-size: 1rem;
     margin-top: 1rem;

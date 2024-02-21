@@ -28,7 +28,10 @@
             <input type="text" placeholder="Name" id="inputEmail" name="name" value="{{ old('name') }}">
             <input type="text" placeholder="Email" id="inputEmail" name="email" value="{{ old('email') }}">
             <input type="password" placeholder="Password" id="inputPassword" name="password" value="{{ old('password') }}">
-
+            <select name="role" id="role" value="{{ old('role') }}">
+                <option value="pelanggan">Pelanggan</option>
+                <option value="petugas">Petugas</option>
+            </select>
             <button type="submit">Sign Up</button>
         </form>
 
@@ -39,7 +42,6 @@
     </div>
 </body>
 </html>
-
 {{-- <style>
     @import url("https://fonts.googleapis.com/css?family=Poppins:wght@400;600$display=swap");
 

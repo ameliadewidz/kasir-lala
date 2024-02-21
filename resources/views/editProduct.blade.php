@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>KasiRPL - Transaction</title>
+    <title>KasiRPL - Edit Product</title>
     <link href="{{ asset('css/addData.css') }}" rel="stylesheet" type="text/css" >
 </head>
 <body>
@@ -68,7 +68,7 @@
             <div class="header--wrapper">
                 <div class="header--title">
                     <span>KasiRPL</span>
-                    <h1>Transaction</h1>
+                    <h1>Update Product</h1>
                 </div>
     
                 <div class="admin-name">
@@ -79,43 +79,34 @@
     
             {{-- customer --}}
             <div class="card--container">
-                <h3 class="main--title">Transaction</h3>
+                <h3 class="main--title">Product</h3>
                 <div class="card--wrapper">
                     <div class="container">
                         <div class="box form-box">
-                            <form action="{{ route('inserttransaction') }}" method="POST" enctype="multipart/form-data">
+                            <form action="/updateproduct/{{ $data->produkID }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                {{-- <div class="field input">
-                                    <label for="id">ID</label>
-                                    <input type="text" name="id" id="id" value="{{ old('id') }}">
-                                </div> --}}
-                            
                                 <div class="field input">
-                                    <label for="penjualanID">Transaction ID</label>
-                                    <input type="text" name="penjualanID" id="penjualanID" value="{{ old('penjualanID') }}">
+                                    <label for="id">Product ID</label>
+                                    <input type="text" name="produkID" id="produkID" value="{{ $data->produkID }}">
                                 </div>
                             
                                 <div class="field input">
-                                    <label for="date">Date</label>
-                                    <input type="date" name="date" id="date" value="{{ old('date') }}">
+                                    <label for="id">Product Name</label>
+                                    <input type="text" name="namaProduk" id="namaProduk" value="{{ $data->namaProduk }}">
                                 </div>
                             
                                 <div class="field input">
-                                    <label for="totalHarga">Total Price</label>
-                                    <input type="text" name="totalHarga" id="totalHarga" value="{{ old('totalHarga') }}">
+                                    <label for="id">Price</label>
+                                    <input type="text" name="harga" id="harga" value="{{ $data->harga }}">
                                 </div>
                             
                                 <div class="field input">
-                                    <label for="id">Customer ID</label>
-                                    <select name="pelangganID" id="pelangganID">
-                                        @foreach($data as $row)
-                                            <option value="{{ $row->pelangganID }}">{{ $row->namaProduk }}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="id">Stock</label>
+                                    <input type="text" name="stok" id="stok" value="{{ $data->stok }}">
                                 </div>
                                 
                                 <div class="field">
-                                    <button>Add Data</button>
+                                        <button>Update Data</button>
                                 </div>
                             </form>
                         </div>
