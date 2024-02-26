@@ -23,7 +23,7 @@ class ProdukController extends Controller
         $request->validate([
             'produkID' => 'required|integer',
             'namaProduk' => 'required|string',
-            'harga' => 'required|integer',
+            'harga' => 'integer',
             'stok' => 'required|integer',
         ]);
     
@@ -49,7 +49,7 @@ class ProdukController extends Controller
         return redirect()->route('product')->with('success', 'Product updated successfully!');;
     }
 
-    public function delete($id) {
+    public function deleteproduct($id) {
         $data = Produk::find($id);
 
         if (!$data) {

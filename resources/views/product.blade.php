@@ -7,8 +7,8 @@
     <title>KasiRPL - Product</title>
     <link href="{{ asset('css/addData.css') }}" rel="stylesheet" type="text/css" >
 </head>
+
 <body>
-    <body>
         {{-- sidebar --}}
         <div class="sidebar">
             <div class="logo">
@@ -84,37 +84,37 @@
                 <div class="card--wrapper">
                     <a href="{{ url('addproduct') }}" class="button">Add Product</a>
                     <div class="table-container">
-                        <!-- mengecek pesan sukses (jika berhasil) lalu tampilkan -->
+                            <!-- mengecek pesan sukses (jika berhasil) lalu tampilkan -->
                         @if(Session::has('success'))
-                        <div class="alert alert-success">
-                            {{ Session::get('success') }}
-                        </div>
-                        @endif
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Product ID</th>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Stock</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($data as $row)
-                                <tr>
-                                    <td>{{ $row->produkID }}</td>
-                                    <td>{{ $row->namaProduk }}</td>
-                                    <td>{{ $row->harga }}</td>
-                                    <td>{{ $row->stok }}</td>
-                                    <td>
-                                        <a href="/viewproduct/{{ $row->produkID }}" class="button-edit">Edit</a>
-                                        <a href="/deleteproduct/{{ $row->produkID }}" class="button-delete">Delete</a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                    </table>
+                    <div class="alert alert-success">
+                        {{ Session::get('success') }}
+                    </div>
+                    @endif
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($data as $row)
+                            <tr>
+                                <td>{{ $row->produkID }}</td>
+                                <td>{{ $row->namaProduk }}</td>
+                                <td>{{ $row->harga }}</td>
+                                <td>{{ $row->stok }}</td>
+                                <td>
+                                    <a href="/viewproduct/{{ $row->produkID }}" class="button-edit">Edit</a>
+                                    <a href="/deleteproduct/{{ $row->produkID }}" class="button-delete">Delete</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

@@ -22,8 +22,8 @@ return new class extends Migration
         
         Schema::create('detail_penjualans', function (Blueprint $table) {
             $table->bigIncrements('detailID');
-            $table->bigInteger('penjualanID'); // Gunakan unsigned
-            $table->bigInteger('produkID'); // Gunakan unsigned
+            $table->bigInteger('penjualanID');
+            $table->bigInteger('produkID');
             $table->integer('jumlahProduk');
             $table->integer('subTotal');
             $table->timestamps();

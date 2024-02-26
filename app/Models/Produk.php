@@ -19,7 +19,9 @@ class Produk extends Model
         'harga',
         'stok',
     ];
-    // public function detailpenjualan() {
-    //     return $this->hasOne('App\DetailPenjualan');
-    // }
+
+    public function detailpenjualan()
+    {
+        return $this->hasMany(DetailPenjualan::class, 'produkID');
+    }
 }

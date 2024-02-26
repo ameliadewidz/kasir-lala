@@ -29,8 +29,8 @@
             <input type="text" placeholder="Email" id="inputEmail" name="email" value="{{ old('email') }}">
             <input type="password" placeholder="Password" id="inputPassword" name="password" value="{{ old('password') }}">
             <select name="role" id="role" value="{{ old('role') }}">
-                <option value="pelanggan">Pelanggan</option>
                 <option value="petugas">Petugas</option>
+                <option value="pelanggan">Pelanggan</option>
             </select>
             <button type="submit">Sign Up</button>
         </form>

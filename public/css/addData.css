@@ -27,10 +27,6 @@
         transition: all 0.5s linear;
         background: #f6a6bb;
     }
-    /* .sidebar:hover {
-        width: 240px;
-        transition: 0.5s;
-    } */
 
     .logo {
         height: 80px;
@@ -102,7 +98,7 @@
         color: #ee87a6;
     }
 
-    /* product data */
+    /* data */
     .card--container {
         background: #fff;
         margin-top: 1rem;
@@ -155,7 +151,12 @@
         border: 1px solid #ccc;
         outline: none;
     }
-
+    .form-box form a {
+        padding: 5px 8px; /* Ukuran padding yang lebih kecil */
+        text-decoration: none;
+        cursor: pointer;
+        color: #000;
+    }
     .form-box form .input textarea {
         height: 40px;
         width: 100%;
@@ -224,6 +225,7 @@
         padding: 15px;
     }
 
+    /* button */
     .table-container .button {
         color: #fff;
         cursor: pointer;
@@ -293,3 +295,12 @@
         color: #28a745;
         margin-bottom: 10px; /* jarak antara pesan dengan elemen di bawahnya */
     }
+
+    /* .field.input a {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #3490dc;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 5px;
+    } */

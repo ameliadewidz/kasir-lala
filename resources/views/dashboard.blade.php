@@ -52,6 +52,11 @@
                         <span>Customer</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ url('detail') }}">
+                        <span>Detail Transaction</span>
+                    </a>
+                </li>
                 @endif
                 {{-- end dashboard petugas --}}
 

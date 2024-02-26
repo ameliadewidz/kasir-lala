@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('penjualans', function (Blueprint $table) {
             $table->bigInteger('penjualanID')->primary();
-            $table->date('tglPenjualan')->default(now());
+            $table->date('tglPenjualan')->nullable();
             $table->integer('totalHarga');
             $table->bigInteger('pelangganID');
             $table->timestamps();

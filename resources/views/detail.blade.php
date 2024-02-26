@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>KasiRPL - Transaction</title>
+    <title>KasiRPL - Detail Transaction</title>
     <link href="{{ asset('css/addData.css') }}" rel="stylesheet" type="text/css" >
 </head>
 
@@ -52,6 +52,11 @@
                         <span>Customer</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ url('detail') }}">
+                        <span>Detail Transaction</span>
+                    </a>
+                </li>
                 @endif
                 {{-- end dashboard petugas --}}
 
@@ -69,7 +74,7 @@
             <div class="header--wrapper">
                 <div class="header--title">
                     <span>KasiRPL</span>
-                    <h1>Transaction</h1>
+                    <h1>Detail Transaction</h1>
                 </div>
     
                 <div class="admin-name">
@@ -80,9 +85,9 @@
 
             {{-- product --}}
             <div class="card--container">
-                <h3 class="main--title">Transaction</h3>
+                <h3 class="main--title">Detail Transaction</h3>
                 <div class="card--wrapper">
-                    <a href="{{ url('addtransaction') }}" class="button">Add Transaction</a>
+                    <a href="{{ url('add-detailtransaction') }}" class="button">Add Transaction</a>
                     
                     <div class="table-container">
                             <!-- mengecek pesan sukses (jika berhasil) lalu tampilkan -->
@@ -94,30 +99,42 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>Detail ID</th>
                                 <th>Transaction ID</th>
-                                <th>Cust. ID</th>
-                                <th>Cust. Name</th>
-                                <th>Total</th>
-                                <th>Date</th>
+                                <th>Product ID</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                {{-- <th>Cust. ID</th>
+                                <th>Cust. Name</th> --}}
+                                <th>Qty</th>
+                                <th>Sub Total</th>
+                                {{-- <th>Total</th>
+                                <th>Date</th> --}}
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($data as $row)
-                            <tr>
-                                <td>{{ $row->penjualanID }}</td> {{-- transaction id --}}
-                                <td>{{ $row->pelangganID }}</td> {{-- cust id --}}
-                                <td>{{ $row->pelanggan->namaPelanggan }}</td> {{-- cust name --}}
-                                <td>{{ $row->totalHarga }}</td> {{-- total --}}
-                                <td>{{ $row->tglPenjualan }}</td>
-                                <td>
-                                    <a href="/viewtransaction/{{ $row->penjualanID }}" class="button-edit">Edit</a>
-                                    <a href="/deletetransaction/{{ $row->penjualanID }}" class="button-delete">Delete</a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{{ $row->detailID }}</td> {{-- transaction id --}}
+                                    <td>{{ $row->penjualanID }}</td> {{-- detail id --}}
+                                    <td>{{ $row->produkID }}</td> {{-- product id --}}
+                                    <td>{{ $row->produk->namaProduk }}</td>
+                                    <td>{{ $row->produk->harga }}</td>
+                                    {{-- <td>{{ $row->pelanggan ? $row->pelanggan->pelangganID : 'N/A' }}</td> 
+                                    <td>{{ $row->pelanggan ? $row->pelanggan->namaPelanggan : 'N/A' }}</td>  --}}
+                                    <td>{{ $row->jumlahProduk }}</td> {{-- qty --}}
+                                    <td>{{ $row->subTotal }}</td> {{-- sub total --}}
+                                    {{-- <td>{{ $row->penjualan ? $row->penjualan->totalHarga : 'N/A' }}</td>
+                                    <td>{{ $row->penjualan ? $row->penjualan->tglPenjualan : 'N/A' }}</td> --}}
+                                    <td>
+                                        <a href="/view-detail/{{ $row->detailID }}" class="button-edit">Edit</a>
+                                        <a href="/deletedetail/{{ $row->detailID }}" class="button-delete">Delete</a>
+                                    </td>
+                                </tr>
                             @endforeach
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
             </div>
         </div>
     </div>

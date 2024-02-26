@@ -10,17 +10,15 @@ use Illuminate\Support\Facades\Session;
 class PenjualanController extends Controller
 {
     public function index() {
-        // $data = Pelanggan::all();
-        // //dd($data);
-        // return view('transaction', compact('data'));
-
-        $data = Pelanggan::all();
-        // dd($data); // Cek apakah data pelanggans diambil dengan benar
+        // dd($data);
+        
+        $data = Penjualan::all();
         return view('transaction', ['data' => $data]);
     }
 
     public function addtransaction() {
-        return view('transaction');
+        $data = Pelanggan::all();
+        return view('addTransaction', ['data' => $data]);
     }
 
     public function inserttransaction(Request $request) {
@@ -28,7 +26,7 @@ class PenjualanController extends Controller
         
         $request->validate([
             'penjualanID' => 'required',
-            'date' => 'required|date',
+            'tglPenjualan' => 'date',
             'totalHarga' => 'required|integer',
             'pelangganID' => 'required|exists:pelanggans,pelangganID',
         ]);
@@ -44,6 +42,31 @@ class PenjualanController extends Controller
         $data = Penjualan::find($id);
         // dd($data);
 
-        return view('editTransaction', compact('data'));
+        if (!$data) {
+            return redirect()->route('transaction')->with('error', 'Transaction not found');
+        }
+    
+        $pelangganData = Pelanggan::all(); // Ambil data pelanggan
+        return view('editTransaction', compact('data', 'pelangganData'));
+    }
+
+    public function updatetransaction(Request $request, $id) {
+        $data = Penjualan::find($id);
+
+        $data->update($request->all());
+
+        return redirect()->route('transaction')->with('success', 'Transaction updated successfully!');
+    }
+
+    public function deletetransaction($id) {
+        $data = Penjualan::find($id);
+
+        if (!$data) {
+            return redirect()->route('transaction')->with('error', 'Transaction not found');
+        }
+    
+        $data->delete();
+    
+        return redirect()->route('transaction')->with('success', 'Transaction deleted successfully!');
     }
 }
